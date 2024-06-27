@@ -1,0 +1,97 @@
+@keyframes slideInAndFadeIn {
+    0% {
+        transform: translateX(150px);
+        /* Start from the right */
+        opacity: 0;
+        /* Start fully transparent */
+        animation: ease-out forwards;
+        z-index: 10;
+    }
+
+    5% {
+        opacity: 1;
+        z-index: 10;
+    }
+
+    10% {
+        transform: translateX(0);
+        /* End at the original position */
+        opacity: 1;
+
+        animation: ease-out forwards;
+        z-index: 10;
+    }
+
+    20% {
+        transform: translateX(0);
+        /* End at the original position */
+        opacity: 1;
+
+        animation: ease-out forwards;
+        z-index: 10;
+    }
+
+    50% {
+        transform: translateX(0);
+        /* End at the original position */
+        opacity: 1;
+
+        animation: ease-out forwards;
+        z-index: 10;
+    }
+
+    100% {
+        transform: translateX(0);
+        /* End at the original position */
+        opacity: 1;
+
+        animation: ease-out forwards;
+        z-index: 10;
+    }
+}
+
+@keyframes slideOutAndFadeOut {
+    0% {
+
+        transform: translateX(0);
+        /* Start from the right */
+        opacity: 1;
+        /* Start fully transparent */
+        animation: ease-out forwards;
+    }
+
+
+    50% {
+        opacity: 0;
+    }
+
+    99% {
+        z-index: -10;
+    }
+
+    100% {
+        transform: translateX(-150px);
+        /* End at the original position */
+        opacity: 0;
+        z-index: -10;
+        /* End fully opaque */
+        animation: ease-out forwards;
+    }
+}
+
+.final-state-class {
+    opacity: 0;
+    z-index: -10;
+}
+
+
+.gif-class {
+    /*   position: absolute;
+    top: 50%;
+    right: 15%; */
+    height: auto;
+    max-width: 300px;
+    aspect-ratio: 3 / 3;
+    z-index: 10;
+
+}

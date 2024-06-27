@@ -1,0 +1,71 @@
+.button-find-help-now {
+
+    border-radius: 12px;
+    width: 35cqmin !important;
+    height: 10cqmin;
+
+    text-wrap: nowrap;
+
+
+    font-size: 3.5cqmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-color: transparent;
+    color: white;
+    background: linear-gradient(to bottom, #6dae08, #5e8e05);
+
+    /*    background-color: #008916; */
+
+    font-weight: normal;
+    box-shadow: 2px 2px 8px 0px rgba(0, 38, 6, 0.20);
+    --bs-btn-border-color: transparent;
+    cursor: pointer;
+
+
+    /*     padding-left: 3%;
+    padding-right: 3%;
+    position: absolute; */
+    /*  bottom: 10%;
+    left: 16% */
+}
+
+
+.button-espanol {
+    height: 40px;
+    width: 155px;
+    position: absolute;
+    top: 5px;
+    right: 3%;
+
+    /*  bottom: 3%;
+    left: 16%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.text-help-main {
+    font-size: 8cqmin;
+    text-wrap: nowrap;
+    /*    font-weight: bolder; */
+    color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.text-help-word {
+    font-size: 10cqmin;
+    font-weight: normal;
+    color: black;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
