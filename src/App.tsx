@@ -224,7 +224,7 @@ export const App = (): JSX.Element => {
           <Col xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
             <div className="button-find-help-now"
-              onClick={() => { LogButtonPress("osf-findhelp-02-english"), openWebsite(/* "https://osfmissionpartners.findhelp.com/search_results/61603" */ "https://osfmissionpartners.findhelp.com/search_results/61603?lang=en"); }}
+              onClick={() => { LogButtonPress("osf-findhelp-01-english"), openWebsite(/* "https://osfmissionpartners.findhelp.com/search_results/61603" */ "https://osfmissionpartners.findhelp.com/search_results/61603?lang=en"); }}
             >
               Find Help Now!
             </div>
@@ -232,14 +232,17 @@ export const App = (): JSX.Element => {
           <Col xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
             <div className="button-find-help-now"
-              onClick={() => { LogButtonPress("osf-findhelp-02-spanish"), openWebsite("https://osfmissionpartners.findhelp.com/search_results/61603?lang=es") }} >¿Ver en Español?
+              onClick={() => { LogButtonPress("osf-findhelp-01-spanish"), openWebsite("https://osfmissionpartners.findhelp.com/search_results/61603?lang=es") }} >¿Ver en Español?
             </div>
           </Col>
 
         </Row>
-        <Row style={{ width: "100dvw", height: "10dvh", display: "flex", justifyContent: "center", alignItems: "end", padding: "25px" }}>
+        <Row style={{ width: "100dvw", height: "10dvh", display: "flex", justifyContent: "space-evenly", alignItems: "center", padding: "25px" }}>
           <Col style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
             <img style={{ maxHeight: "60px" }} src="./assets/OSFHC_s_b.svg"></img>
+          </Col>
+          <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div onClick={()=>{LogButtonPress("osf-findhelp-01-survey"), openWebsite("https://uic.ca1.qualtrics.com/jfe/form/SV_23QTO5NJKNwmjwq")}} style={{color: "#599b50", textDecoration: "underline", fontSize: "3cqmin", fontWeight: "bold"}}>Take a Research Survey</div>
           </Col>
           <Col style={{ display: "flex", justifyContent: "end", alignItems: "center" }}>
             <img style={{ maxHeight: "60px" }} src="./assets/newUIC_logo.svg"></img>
