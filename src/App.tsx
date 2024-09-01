@@ -14,6 +14,27 @@ import HelpText from "./Components/component_mainscreen_helpText";
 import osfLogo from "./assets/osf_h_w.svg"
 import returnHome from "./assets/returnHomeAnytime.png"
 import TopicGif from "./Components/component_navbar-TopicGif";
+import FloatingGif_2 from "./Components/component_mainscreen_floatingGifs_2";
+import TextHelp_2 from "./Components/component_mainscreen_TextHelp_2";
+import FloatingGif_3 from "./Components/component_mainscreen_floatingGifs_3";
+
+import { initializeApp } from "firebase/app";
+import { getAnalytics, logEvent } from "firebase/analytics";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCC25EHayPIdfPUEv-Bsm28oZHrHRqXi-M",
+  authDomain: "osf-kiosk-app.firebaseapp.com",
+  projectId: "osf-kiosk-app",
+  storageBucket: "osf-kiosk-app.appspot.com",
+  messagingSenderId: "482885572486",
+  appId: "1:482885572486:web:0da209f1bbbe5169293e07",
+  measurementId: "G-9NWJXXMFQM"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 
 
 export const App = (): JSX.Element => {
@@ -128,9 +149,9 @@ export const App = (): JSX.Element => {
   }
 
 
-  useEffect(() => {
-    console.log("Current Index was changed to: " + currentIndex + "!!")
-  }, [currentIndex]);
+  /*  useEffect(() => {
+     console.log("Current Index was changed to: " + currentIndex + "!!")
+   }, [currentIndex]); */
 
 
   const openWebsite = (givenString: string) => {
@@ -140,30 +161,12 @@ export const App = (): JSX.Element => {
     /*  window.location.href = "https://osfmissionpartners.findhelp.com/search_results/61603?lang=es"; */
   };
 
+  function LogButtonPress(givenString: string) {
+    logEvent(analytics, "page_view", { page_title: "kiosk-1_" + givenString })
+  }
+
   return (
     <div>
-
-      {/*  <div className="navbar-topbar">
-        <div onClick={() => { openWebsite("https://osfmissionpartners.findhelp.com/search_results/61603?lang=es") }} className="button-espanol">¿Ver en Español?</div>
-
-      </div> */}
-      {/*   <div className="navbar-custom">
-          <div className="navbar-images">
-          <img style={{ maxHeight: "8cqmin", width: "auto", marginBottom: "1%", aspectRatio: "70 / 13" }}
-            src={returnHome}>
-          </img>
-
-          <img src={osfLogo} alt="OSF LOGO" className="navbar-osf-logo" />
-
-        </div> 
-
-        <div className="navbar-white-line"></div>
-
-    
-
-      </div> */}
-
-
 
       <Container style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", }}>
 
@@ -186,8 +189,11 @@ export const App = (): JSX.Element => {
         <Row style={{ display: "flex", width: "80dvw", height: "50dvh", justifyContent: "center", alignItems: "center" }}>
           <Col xs={8} sm={8} md={8} lg={8} xl={8} xxl={5} style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
 
-            <HelpText givenTextMain={helpTextMainArray[currentIndex]}
-              givenTextWord={helpTextWordArray[currentIndex]} givenCurrentIndex={currentIndex} givenIndex={currentIndex} />
+            <TextHelp_2 givenTextMain={helpTextMainArray[currentIndex]}
+              givenTextWord={helpTextWordArray[currentIndex]}
+              givenCurrentIndex={currentIndex}
+              givenIndex={currentIndex}
+              givenCarouselTimer={carouselTimer} />
 
 
 
@@ -200,12 +206,13 @@ export const App = (): JSX.Element => {
           <Col xs={3}
             style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
-            <FloatingGif
+            <FloatingGif_2
               givenGifName={navbarTextArray[currentIndex]}
               givenIndex={currentIndex}
               givenCurrentIndex={currentIndex}
               SetCurrentIndex={setCurrentIndex}
               PauseCurrentTimer={handlePauseCarousel}
+              givenCarouselTimer={carouselTimer}
             />
 
 
@@ -217,7 +224,7 @@ export const App = (): JSX.Element => {
           <Col xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
             <div className="button-find-help-now"
-              onClick={() => { openWebsite(/* "https://osfmissionpartners.findhelp.com/search_results/61603" */ "https://osfmissionpartners.findhelp.com/search_results/61603?lang=en"); }}
+              onClick={() => { LogButtonPress("osf-findhelp-02-english"), openWebsite(/* "https://osfmissionpartners.findhelp.com/search_results/61603" */ "https://osfmissionpartners.findhelp.com/search_results/61603?lang=en"); }}
             >
               Find Help Now!
             </div>
@@ -225,17 +232,17 @@ export const App = (): JSX.Element => {
           <Col xs={3} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
             <div className="button-find-help-now"
-              onClick={() => { openWebsite("https://osfmissionpartners.findhelp.com/search_results/61603?lang=es") }} >¿Ver en Español?
+              onClick={() => { LogButtonPress("osf-findhelp-02-spanish"), openWebsite("https://osfmissionpartners.findhelp.com/search_results/61603?lang=es") }} >¿Ver en Español?
             </div>
           </Col>
 
         </Row>
         <Row style={{ width: "100dvw", height: "10dvh", display: "flex", justifyContent: "center", alignItems: "end", padding: "25px" }}>
           <Col style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-            <img src="./assets/OSF Logo Blue.svg"></img>
+            <img style={{ maxHeight: "60px" }} src="./assets/OSFHC_s_b.svg"></img>
           </Col>
           <Col style={{ display: "flex", justifyContent: "end", alignItems: "center" }}>
-            <img src="./assets/UIUC Logo Blue.svg"></img>
+            <img style={{ maxHeight: "60px" }} src="./assets/newUIC_logo.svg"></img>
           </Col>
         </Row>
 

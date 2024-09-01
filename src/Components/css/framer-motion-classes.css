@@ -1,0 +1,9 @@
+.framer-motion-general {
+    will-change: opacity, transform, scale;
+}
+
+.framer-motion-transition {
+    transition-duration: 6s;
+    /* transition-delay: 2s; */
+
+}

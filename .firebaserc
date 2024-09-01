@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "osf-kiosk-app"
+  },
+  "targets": {
+    "osf-kiosk-app": {
+      "hosting": {
+        "osf-findhelp-01": [ "osf-findhelp-01" ]
+
+      }
+    }
   }
 }
+
+
